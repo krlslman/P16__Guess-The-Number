@@ -39,12 +39,20 @@ p,h1,h5 {
 }
 #guess-number {
 	/* font-style: italic; */
-	font-size: 1rem;
+	text-align: center;
+	width: 30%;
+
+	font-size: 2.5rem;
 	/* border: red solid 2px; */
 	color: beige;
 	font-weight: 700 !important;
 	background-color: var(--color3);
+	/* transition:cubic-bezier(0.075, 0.82, 0.165, 1); */
 	/* border: 0px solid; */
+}
+#guess-number:hover {
+	font-size: 2.6rem;
+	/* transition: all; */
 }
 #btn-check {
 	background: #1e7731 !important;
@@ -54,6 +62,14 @@ p,h1,h5 {
 #btn-again {
 	background: #9b3d34 !important;
 	font-weight: 500 !important;
+}
+#btn-check:hover {
+	/* width: 150px !important; */
+	box-shadow: 0 0 10px rgb(21, 20, 20);
+}
+#btn-again:hover {
+	/* width: 150px !important; */
+	box-shadow: 0 0 10px rgb(21, 20, 20);
 }
 .container {
 	/* margin:  15vh auto; */
@@ -162,5 +178,21 @@ p,h1,h5 {
 	}
 	#lives {
 		text-align: center;
+	}
+	#guess-number {
+		font-size: 1.5rem;
+		/* transition: all; */
+	}
+	#guess-number:hover {
+		font-size: 1.6rem;
+		/* transition: all; */
+	}
+	.below-section button {
+		/* box-sizing:content-box; */
+		/* display: flex !important;
+		flex-direction: row !important;
+		flex-wrap: nowrap !important; */
+		/* padding: 5px !important; */
+		margin: 40px 10px !important;
 	}
  }
