@@ -120,7 +120,7 @@ p,h1,h5 {
 	/* margin-right: 10px */
 }
 .below-section button {
-	border: red solid 2px;
+	/* border: red solid 2px; */
 	margin: 10px auto !important;
 	/* padding: 0 !important; */
 }
@@ -161,7 +161,7 @@ p,h1,h5 {
 		  justify-content: space-around;
 	  }
 	  .clue{
-		  border: red solid 2px;
+		  /* border: red solid 2px; */
 		  margin: 10px !important;
 		  padding: 1px !important;
 	  }
