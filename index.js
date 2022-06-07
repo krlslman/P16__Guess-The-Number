@@ -28,6 +28,8 @@ let min = 1;
 let max = 100;
 const arrayAttempts = new Array;
 
+btnAgain.style.display= "none";
+
 document.getElementById("guess-number").focus();
 
 console.log(scale);
@@ -35,8 +37,7 @@ btnAgain.addEventListener(`click`, () => {
 	window.location.reload();
 });
 
-
-btnCheck.addEventListener(`click`, () => {
+const guessTheNumber = () => {
     tahmin = guessNumber.value;
     console.log(tahmin);
     if (tahmin!=''){
@@ -49,6 +50,9 @@ btnCheck.addEventListener(`click`, () => {
 		live --;
 		if (Number(tahmin) == Number(randomNumber)){
 			document.getElementById("btn-check").disabled = true;
+			btnAgain.style.display= "inline-block";
+			btnCheck.style.display= "none";
+			guessNumber.disabled = true;
 		}
 		if (Number(tahmin) == Number(randomNumber) && Number(live) == 4){
 			console.log(`Congrats!! You win on 1st try.`);
@@ -78,7 +82,8 @@ btnCheck.addEventListener(`click`, () => {
 			
 			attempt.innerHTML = Number(attempt.innerHTML)+1;
 
-			console.log(guessNumber.value);
+			// console.log(guessNumber.value);
+			
 
 			if (tahmin > randomNumber) {
 				
@@ -96,8 +101,11 @@ btnCheck.addEventListener(`click`, () => {
 		
 		if (live == 0 && tahmin != randomNumber) {
 			console.log("Game over! :(");
-			result.innerText = `Game over! \t :( `;
+			result.innerText = `Game over! \t :( Correct answer: ${randomNumber}`;
 			document.getElementById("btn-check").disabled = true;
+			btnAgain.style.display= "inline-block";
+			btnCheck.style.display= "none";
+			guessNumber.disabled = true;
 		}
 		
 		document.getElementById("guess-number").focus();
@@ -106,8 +114,10 @@ btnCheck.addEventListener(`click`, () => {
 			scale.innerHTML = `Can't be empty!`;
 			document.getElementById("guess-number").focus();
 		}
+};
 
-});
+btnCheck.addEventListener(`click`, guessTheNumber)
+// check.addEventListener("click", guessTheNumber);
 
 const deleteHeart = () => {
 	const listHearts = document.getElementById("lives");
@@ -119,18 +129,23 @@ const deleteHeart = () => {
 	// listHearts.removeChild(listHearts.lastElementChild);
 }
 
-document.getElementById("guess-number").addEventListener("keydown", function(e){
-	if (e.key === 'Enter') {
-		// code for enter
-		checker
-}
-});
+// document.getElementById("guess-number").addEventListener("keydown", function(e){
+// 	if (e.key === 'Enter') {
+// 		// code for enter
+// 		checker
+// }
+// });
 
 // Game over dediğimiz if'te btnCheck.disable vereceğiz
 // kalpler silinmesin opacity leri düşsün
 
 
-
+guessNumber.addEventListener("keydown", (e) => {
+	if (e.keyCode === 13) {
+	  guessTheNumber();
+		// btnCheck.click()
+	}
+  });
 
 
 // pseudocode:
